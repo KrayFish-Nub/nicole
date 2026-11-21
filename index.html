@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roses & Treasures | You're Invited</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff8f5;
+  color: #5c2339;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #641c3b, #b65f83, #f2d6df);
+}
+
+.cover-box {
+  padding: 45px 25px;
+  width: 100%;
+  max-width: 430px;
+  background: #fffaf4;
+  border: 2px solid #d7b46a;
+  outline: 1px solid #d7b46a;
+  outline-offset: 7px;
+}
+
+.cover-box .rose {
+  font-size: 55px;
+}
+
+.cover-box h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 65px;
+  color: #8a3457;
+  font-weight: normal;
+}
+
+.cover-box p {
+  margin: 15px 0;
+  letter-spacing: 3px;
+  font-size: 11px;
+}
+
+button {
+  background: #792b4d;
+  color: white;
+  border: 1px solid #d7b46a;
+  padding: 15px 30px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: #a34d70;
+}
+
+.hidden {
+  display: none;
+}
+
+main {
+  max-width: 850px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
+.gold {
+  color: #c6a15a;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin: 20px 0;
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 55px;
+  font-weight: normal;
+  color: #a64f72;
+  margin: 15px 0;
+}
+
+.name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 43px;
+  color: #752747;
+  margin: 15px 0;
+}
+
+.theme {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #c6a15a;
+  letter-spacing: 4px;
+  font-size: 11px;
+  margin: 15px;
+}
+
+section {
+  padding: 45px 10px;
+  border-top: 1px solid #e8d6c1;
+  margin-top: 35px;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: normal;
+  color: #752747;
+}
+
+.date-box {
+  background: white;
+  border: 1px solid #d7b46a;
+  padding: 30px 15px;
+  margin: 25px auto;
+  max-width: 500px;
+}
+
+.date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  color: #a64f72;
+}
+
+.details {
+  font-size: 13px;
+  line-height: 2.2;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.photo {
+  min-height: 230px;
+  background: linear-gradient(135deg, #f4dce4, #fff1e5);
+  border: 1px solid #d7b46a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.photo span {
+  font-size: 45px;
+}
+
+.photo p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5d2b1;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: normal;
+  margin: 10px;
+  color: #8a3457;
+}
+
+.card p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+.colors {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.pink {
+  background: #e9a7c0;
+}
+
+.purple {
+  background: #a88bc7;
+}
+
+.white {
+  background: white;
+}
+
+.rose-dark {
+  background: #8b3659;
+}
+
+footer {
+  padding: 45px 15px;
+  background: #702543;
+  color: #fff5ed;
+  margin-top: 30px;
+}
+
+footer h2 {
+  color: #f0d6df;
+}
+
+footer p {
+  font-size: 13px;
+  line-height: 2;
+  margin: 15px;
+}
+
+footer .script {
+  color: #f1c5d5;
+}
+
+@media(max-width:500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .script {
+    font-size: 47px;
+  }
+
+  .name {
+    font-size: 35px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- OPENING COVER -->
+<div class="cover" id="cover">
+  <div class="cover-box">
+    <div class="rose">🌹</div>
+    <p>A SPECIAL INVITATION</p>
+    <h1>You're Invited</h1>
+    <p>TO A NIGHT OF ROSES & TREASURES</p>
+    <button onclick="openInvitation()">OPEN INVITATION ✦</button>
+  </div>
+</div>
+
+<!-- MAIN INVITATION -->
+<main id="invitation" class="hidden">
+
+  <p class="gold">✦ WITH LOVE AND GRATITUDE ✦</p>
+
+  <p class="details">
+    Together with her family,<br>
+    we invite you to celebrate
+  </p>
+
+  <h1 class="script">Her 18th Birthday</h1>
+
+  <h1 class="name">BIRTHDAY GIRL</h1>
+
+  <div class="theme">
+    🌹 ROSES & TREASURES 💎
+  </div>
+
+  <!-- EVENT DETAILS -->
+  <div class="date-box">
+    <p class="gold">SAVE THE DATE</p>
+    <p class="date">DATE HERE</p>
+    <p class="details">TIME HERE</p>
+    <p class="details">VENUE HERE</p>
+  </div>
+
+  <!-- PHOTO GALLERY -->
+  <section>
+    <p class="gold">THE STAR OF THE NIGHT</p>
+    <h2 class="script">The Birthday Girl</h2>
+
+    <div class="gallery">
+
+      <div class="photo">
+        <span>🌹</span>
+        <p>Birthday Girl's Photo</p>
+      </div>
+
+      <div class="photo">
+        <span>💎</span>
+        <p>Birthday Girl's Photo</p>
+      </div>
+
+      <div class="photo">
+        <span>🌷</span>
+        <p>Birthday Girl's Photo</p>
+      </div>
+
+      <div class="photo">
+        <span>✨</span>
+        <p>Birthday Girl's Photo</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 18 ROSES -->
+  <section>
+    <p class="gold">A TRADITION OF LOVE</p>
+    <h2 class="script">18 Roses</h2>
+
+    <div class="card">
+      <div class="icon">🌹</div>
+      <h3>18 Roses</h3>
+      <p>
+        Eighteen roses, eighteen gentlemen,
+        and beautiful memories to cherish
+        on this special night.
+      </p>
+      <p><br>Participants to be announced</p>
+    </div>
+  </section>
+
+  <!-- 18 SHOTS -->
+  <section>
+    <p class="gold">A TOAST TO MEMORIES</p>
+    <h2 class="script">18 Shots</h2>
+
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>18 Shots</h3>
+      <p>
+        Eighteen special people sharing
+        wishes, laughter, and unforgettable
+        moments with the birthday girl.
+      </p>
+      <p><br>Participants to be announced</p>
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section>
+    <p class="gold">DRESS TO IMPRESS</p>
+    <h2 class="script">Dress Code</h2>
+
+    <div class="card">
+      <h3>For the Ladies</h3>
+      <p>Pink or Purple</p>
+
+      <div class="colors">
+        <div class="color pink"></div>
+        <div class="color purple"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>For the Gentlemen</h3>
+      <p>White or Pink</p>
+
+      <div class="colors">
+        <div class="color white"></div>
+        <div class="color pink"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section>
+    <p class="gold">WE HOPE TO SEE YOU THERE</p>
+    <h2 class="script">Your Presence is Our Present</h2>
+
+    <p class="details">
+      Your presence will make this celebration
+      even more special and memorable.
+    </p>
+
+    <button onclick="alert('Please contact the celebrant or organizer to confirm your attendance!')">
+      RSVP ✦
+    </button>
+  </section>
+
+</main>
+
+<footer id="footer" class="hidden">
+  <p>✦ 🌹 ✦</p>
+  <h2 class="script">Roses & Treasures</h2>
+  <p>A night of elegance, love, and unforgettable memories.</p>
+  <p>Thank you for celebrating with us. 💗</p>
+</footer>
+
+<script>
+function openInvitation() {
+  document.getElementById("cover").style.display = "none";
+  document.getElementById("invitation").classList.remove("hidden");
+  document.getElementById("footer").classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
