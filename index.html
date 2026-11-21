@@ -3,367 +3,939 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roses & Treasures</title>
+<title>Roses & Treasures | 18th Birthday</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pink:#e8b8c9;
+  --light:#fff8f5;
+  --rose:#a66a78;
+  --brown:#805446;
+  --gold:#b69a65;
+  --cream:#fffaf4;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth}
-body{background:#fff5f6;color:#704253;font-family:Montserrat,sans-serif}
-button{cursor:pointer}
-.script{font-family:'Great Vibes',cursive;color:#a65e7d;font-weight:400}
-.serif{font-family:'Cormorant Garamond',serif}
-.gold{color:#bc9860}
-.small-title{letter-spacing:4px;font-size:10px;text-transform:uppercase;color:#bc9860}
 
-/* DREAMY BACKGROUND */
-.cloud-bg{
-background:
-radial-gradient(ellipse at 15% 15%,#fff7f7 0%,transparent 35%),
-radial-gradient(ellipse at 85% 20%,#eac4d5 0%,transparent 40%),
-radial-gradient(ellipse at 30% 90%,#f4d9df 0%,transparent 40%),
-linear-gradient(135deg,#f9e9ee,#e9cbd9,#fff4ef);
+body{
+  background:#f8efed;
+  color:var(--brown);
+  font-family:'Cormorant Garamond',serif;
+  overflow-x:hidden;
 }
 
-/* OPENING */
-#opening{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:25px;
-text-align:center;
+/* FLORAL BACKGROUND */
+.flower-bg{
+  background:
+  linear-gradient(#fff5f0b0,#fff5f0b0),
+  url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 }
+
+.texture{
+  background:
+  radial-gradient(ellipse at top,#f4dce3,transparent 60%),
+  radial-gradient(ellipse at bottom,#ead1d8,transparent 65%),
+  #fff8f3;
+}
+
+button{font-family:inherit}
+
+/* ENVELOPE INTRO */
+#intro{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  text-align:center;
+  background:
+  linear-gradient(#ffffff30,#fff1f450),
+  url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=90');
+  background-size:cover;
+  background-position:center;
+}
+
+.envelope-wrap{max-width:500px;width:100%}
+
 .envelope{
-max-width:420px;
-width:100%;
-padding:45px 25px;
-background:#fffaf5e8;
-border:1px solid #c7a46a;
-outline:1px solid #c7a46a;
-outline-offset:7px;
-box-shadow:0 20px 60px #743c5430;
+  position:relative;
+  padding:80px 25px;
+  background:linear-gradient(145deg,#f8e3d8,#fff4e8,#efd2d2);
+  box-shadow:0 20px 60px #75514645;
+  border:1px solid #c49c77;
 }
-.envelope .flower{font-size:55px}
-.envelope h1{font-size:70px;margin:15px 0}
-.envelope p{font-size:10px;letter-spacing:3px;margin:14px}
-.open-btn{
-background:#873f61;color:white;border:1px solid #c7a46a;
-padding:15px 28px;margin-top:20px;letter-spacing:2px;font-size:11px
-}
-.open-btn:hover{background:#b66d8c}
 
-/* GENERAL SECTIONS */
-#site{display:none}
-.section{padding:65px 20px;text-align:center;position:relative}
-.inner{max-width:850px;margin:auto}
-.divider{color:#c2a06a;letter-spacing:7px;margin:22px}
-.heading{font-size:58px;margin:12px 0}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;color:#87445f}
-.description{font-size:12px;line-height:2;max-width:550px;margin:20px auto}
+.envelope:before{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:1px solid #c49c77;
+  pointer-events:none;
+}
+
+.seal{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.envelope h1{
+  font-family:'Great Vibes',cursive;
+  font-size:75px;
+  font-weight:400;
+  color:#a56878;
+}
+
+.envelope p{
+  letter-spacing:4px;
+  font-size:11px;
+  margin:15px 0;
+}
+
+.open-btn{
+  margin-top:25px;
+  padding:15px 35px;
+  border:1px solid #b79565;
+  background:#a66a78;
+  color:white;
+  letter-spacing:3px;
+  font-size:11px;
+  transition:.3s;
+}
+
+.open-btn:hover{
+  background:#82515e;
+  transform:scale(1.04);
+}
+
+/* MAIN SITE */
+#website{display:none}
+
+section{
+  padding:90px 20px;
+  text-align:center;
+  position:relative;
+}
+
+.container{
+  width:min(900px,100%);
+  margin:auto;
+}
+
+.eyebrow{
+  font-family:Playfair Display,serif;
+  text-transform:uppercase;
+  letter-spacing:5px;
+  font-size:11px;
+  color:var(--gold);
+}
+
+.script{
+  font-family:'Great Vibes',cursive;
+  font-weight:400;
+  color:var(--rose);
+}
+
+.title{
+  font-size:70px;
+  margin:15px 0;
+}
+
+.subtitle{
+  font-family:'Playfair Display',serif;
+  letter-spacing:5px;
+  font-size:16px;
+}
+
+.divider{
+  margin:25px 0;
+  color:var(--gold);
+  letter-spacing:10px;
+}
+
+.text{
+  font-size:19px;
+  line-height:1.8;
+  max-width:650px;
+  margin:20px auto;
+}
 
 /* HERO */
-.hero{min-height:95vh;display:flex;align-items:center;justify-content:center;padding:30px 20px}
-.hero-frame{
-max-width:650px;width:100%;padding:35px 20px;
-border:1px solid #c7a46a;background:#fff7f4b8;
-outline:1px solid #c7a46a;outline-offset:7px
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+  linear-gradient(#f8e5e6a0,#fff5ef90),
+  url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1400&q=90');
+  background-size:cover;
+  background-position:center;
 }
-.hero-frame h1{font-size:75px;margin:5px}
-.hero-name{font-family:'Cormorant Garamond',serif;font-size:43px;color:#75405a}
-.hero-date{font-family:'Cormorant Garamond',serif;font-size:24px;margin:20px}
-.hero-art{width:220px;height:260px;margin:25px auto;position:relative}
-.hero-art .frame{position:absolute;inset:0;border:8px double #c6a36b;border-radius:48% 48% 8px 8px;background:linear-gradient(#f4d9e3,#fff6ef)}
-.hero-art .silhouette{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:125px;height:200px}
-.hero-art .head{width:55px;height:65px;background:#49313b;border-radius:50%;position:absolute;top:0;left:35px}
-.hero-art .hair{position:absolute;top:-5px;left:23px;width:78px;height:100px;background:#49313b;border-radius:50% 50% 25% 25%}
-.hero-art .body{position:absolute;top:65px;left:43px;width:40px;height:55px;background:#e9b3c8}
-.hero-art .dress{position:absolute;top:95px;left:5px;width:115px;height:105px;background:#e8b6cb;clip-path:polygon(35% 0,65% 0,100% 100%,0 100%)}
-.hero-art .arms{position:absolute;top:70px;left:20px;width:90px;height:8px;background:#efc9d5;border-radius:10px;transform:rotate(-8deg)}
+
+.hero-panel{
+  max-width:750px;
+  width:100%;
+  padding:50px 25px;
+  background:#fff8f1a8;
+  border:1px solid var(--gold);
+  outline:1px solid var(--gold);
+  outline-offset:8px;
+}
+
+.hero-name{
+  font-family:'Great Vibes',cursive;
+  font-size:85px;
+  line-height:1.1;
+  color:#986273;
+}
+
+.hero-age{
+  font-family:'Playfair Display',serif;
+  font-size:24px;
+  letter-spacing:8px;
+  margin:15px 0;
+}
+
+/* GOLD PORTRAIT FRAME */
+.portrait-frame{
+  position:relative;
+  width:290px;
+  height:390px;
+  margin:35px auto;
+  padding:13px;
+  background:linear-gradient(135deg,#a67b3f,#f6df9c,#956b35,#e8cb82);
+  clip-path:polygon(
+    10% 0,90% 0,100% 8%,100% 92%,90% 100%,
+    10% 100%,0 92%,0 8%
+  );
+  box-shadow:0 10px 30px #76503040;
+}
+
+.portrait-inner{
+  height:100%;
+  border:3px solid #f8e8b7;
+  overflow:hidden;
+  background:#e9c8d1;
+}
+
+.portrait-inner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.portrait-caption{
+  font-size:12px;
+  letter-spacing:4px;
+  margin-top:20px;
+}
+
+/* COUNTDOWN */
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:35px 0;
+}
+
+.time-box{
+  min-width:75px;
+  padding:15px;
+  background:#fff4f0b8;
+  border:1px solid #c9aa78;
+}
+
+.time-box strong{
+  display:block;
+  font-size:32px;
+  font-weight:400;
+}
+
+.time-box span{
+  font-size:10px;
+  letter-spacing:3px;
+}
 
 /* DETAILS */
-.details-box{background:#fffaf5c9;border:1px solid #d1b174;padding:30px;margin:25px auto;max-width:550px}
-.detail-line{margin:22px}
-.detail-line strong{display:block;font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:400;color:#884863}
-.detail-line p{font-size:11px;line-height:2}
+.details{
+  background:#fff9f4d9;
+  border:1px solid var(--gold);
+  outline:1px solid var(--gold);
+  outline-offset:6px;
+  max-width:650px;
+  padding:35px;
+  margin:40px auto;
+}
 
-/* PHOTO PLACEHOLDERS */
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:15px;max-width:650px;margin:30px auto}
-.photo{
-height:260px;padding:12px;
-background:linear-gradient(145deg,#efd0dc,#fff3ec);
-border:1px solid #c6a36a
+.detail{
+  margin:25px 0;
 }
-.photo-frame{
-height:100%;border:2px solid #d0ad6e;
-display:flex;align-items:center;justify-content:center;flex-direction:column;
-background:radial-gradient(#fff6f2,#eccbd9)
+
+.detail h3{
+  font-family:'Great Vibes',cursive;
+  font-size:40px;
+  color:var(--rose);
 }
-.photo-frame span{font-size:42px}
-.photo-frame p{font-family:'Great Vibes',cursive;font-size:27px;color:#9c5d7b}
+
+.detail p{
+  font-size:19px;
+  letter-spacing:2px;
+}
+
+/* SWIPE GALLERY */
+.gallery-section{
+  background:linear-gradient(#fff1f1b0,#fff9f5d9);
+}
+
+.gallery{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:25px 12px 40px;
+  scrollbar-width:thin;
+  scrollbar-color:#cba5ad #f8e7e9;
+}
+
+.gallery::-webkit-scrollbar{height:5px}
+.gallery::-webkit-scrollbar-thumb{background:#cba5ad;border-radius:20px}
+
+.gallery-card{
+  flex:0 0 82%;
+  max-width:400px;
+  height:480px;
+  scroll-snap-align:center;
+  padding:12px;
+  background:linear-gradient(135deg,#b48b4d,#f5df9c,#b18b4d);
+  box-shadow:0 12px 30px #77534335;
+}
+
+.gallery-card-inner{
+  width:100%;
+  height:100%;
+  background:#f8e4e8;
+  border:3px solid #fff2d2;
+  overflow:hidden;
+}
+
+.gallery-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gallery-placeholder{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:
+  linear-gradient(#f5dfe5b0,#f5dfe5b0),
+  url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80');
+  background-size:cover;
+}
+
+.gallery-placeholder span{font-size:55px}
+
+.gallery-placeholder h3{
+  font-family:'Great Vibes',cursive;
+  font-size:45px;
+  color:#a76c7e;
+}
+
+.gallery-hint{
+  font-family:'Great Vibes',cursive;
+  font-size:30px;
+  color:#a76c7e;
+}
 
 /* PROGRAMS */
-.program{max-width:550px;margin:20px auto;background:#fffaf5;border:1px solid #c6a36a;padding:30px 20px;position:relative}
-.program:before{content:'✦';color:#c6a36a;position:absolute;top:10px;left:10px}
-.program:after{content:'✦';color:#c6a36a;position:absolute;bottom:10px;right:10px}
-.program h3{font-family:'Great Vibes',cursive;font-size:43px;color:#a65e7d}
-.program p{font-size:12px;line-height:2}
+.programs-bg{
+  background:
+  linear-gradient(#fff8f2d9,#fff8f2d9),
+  url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=90');
+  background-size:cover;
+  background-position:center;
+}
 
-/* DRESS CODE MODELS */
-.fashion-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:650px;margin:30px auto}
-.fashion-card{background:#fffaf5;border:1px solid #d0ad6e;padding:10px}
-.model-stage{height:310px;position:relative;overflow:hidden;display:flex;justify-content:center;align-items:flex-end}
-.model-stage.pink-bg{background:linear-gradient(#f8e3ea,#e7b6ca)}
-.model-stage.purple-bg{background:linear-gradient(#eee4f5,#c8afd9)}
-.model-stage.white-bg{background:linear-gradient(#f8f5ee,#dfd8d0)}
-.model-stage.boy-pink-bg{background:linear-gradient(#f8e3ea,#e7b6ca)}
-.model{position:relative;width:140px;height:275px}
-.model .head{position:absolute;top:15px;left:48px;width:43px;height:52px;border-radius:50%;background:#d6a17e;z-index:3}
-.model.girl .hair{position:absolute;top:5px;left:35px;width:70px;height:95px;border-radius:48% 48% 25% 25%;background:#4a3028;z-index:4}
-.model.girl .neck{position:absolute;top:58px;left:61px;width:18px;height:24px;background:#d6a17e}
-.model.girl .top{position:absolute;top:78px;left:43px;width:55px;height:55px;background:#ead1d9;z-index:2}
-.model.girl .skirt{position:absolute;top:120px;left:18px;width:105px;height:140px;clip-path:polygon(35% 0,65% 0,100% 100%,0 100%);z-index:2}
-.model.girl .arms{position:absolute;top:85px;left:32px;width:80px;height:15px;background:#d6a17e;border-radius:20px;transform:rotate(12deg);z-index:1}
-.model.boy .hair{position:absolute;top:9px;left:43px;width:55px;height:28px;border-radius:50% 50% 15% 15%;background:#382a24;z-index:4}
-.model.boy .neck{position:absolute;top:60px;left:61px;width:18px;height:23px;background:#d6a17e}
-.model.boy .shirt{position:absolute;top:78px;left:35px;width:70px;height:95px;clip-path:polygon(20% 0,80% 0,100% 100%,0 100%);z-index:2}
-.model.boy .pants{position:absolute;top:160px;left:42px;width:62px;height:105px;clip-path:polygon(0 0,100% 0,90% 100%,55% 100%,50% 0,45% 100%,10% 100%);background:#403a3c}
-.model.boy .arms{position:absolute;top:82px;left:25px;width:95px;height:18px;background:#d6a17e;border-radius:20px;transform:rotate(5deg);z-index:1}
-.pink-dress{background:#e7a9c1}
-.purple-dress{background:#a58ac3}
-.white-shirt{background:#fff}
-.pink-shirt{background:#e7a9c1}
-.fashion-label{padding:15px 5px}
-.fashion-label h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:#87445f;font-weight:400}
-.fashion-label p{font-size:10px;letter-spacing:2px;margin-top:5px;color:#bd9860}
+.program-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:40px;
+}
+
+.program-card{
+  position:relative;
+  padding:35px 20px;
+  background:#fffaf5e8;
+  border:1px solid var(--gold);
+  outline:1px solid var(--gold);
+  outline-offset:5px;
+  margin:5px;
+  transition:.3s;
+}
+
+.program-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 30px #8c5e4930;
+}
+
+.program-icon{font-size:40px}
+
+.program-card h3{
+  font-family:'Great Vibes',cursive;
+  font-size:43px;
+  color:#a46b7a;
+  margin:12px 0;
+}
+
+.program-card p{
+  font-size:17px;
+  line-height:1.6;
+}
+
+.program-card .number{
+  font-family:'Playfair Display',serif;
+  letter-spacing:4px;
+  font-size:12px;
+  color:var(--gold);
+}
+
+/* PARTICIPANTS */
+.names-box{
+  background:#fff7f3;
+  border:1px solid #c7a46a;
+  padding:25px;
+  margin-top:20px;
+}
+
+.names-box h4{
+  font-family:'Great Vibes',cursive;
+  font-size:35px;
+  color:#a46b7a;
+}
+
+.names-box p{
+  line-height:1.8;
+  font-size:17px;
+}
+
+/* ATTIRE */
+.attire{
+  background:
+  linear-gradient(#fff7f2e0,#fff7f2e0),
+  url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=90');
+  background-size:cover;
+}
+
+.attire-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+.attire-card{
+  background:#fffaf5;
+  padding:12px;
+  border:1px solid var(--gold);
+  box-shadow:0 10px 25px #8c5e4920;
+}
+
+.attire-photo{
+  height:390px;
+  overflow:hidden;
+  background:#f1dce3;
+}
+
+.attire-photo img{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  object-position:top;
+  display:block;
+}
+
+.attire-label{
+  padding:18px 5px;
+}
+
+.attire-label h3{
+  font-family:'Great Vibes',cursive;
+  font-size:42px;
+  color:#a46b7a;
+}
+
+.attire-label p{
+  font-size:11px;
+  letter-spacing:4px;
+  color:var(--gold);
+}
 
 /* RSVP */
-.rsvp-btn{display:inline-block;background:#87445f;color:white;text-decoration:none;padding:15px 35px;border:1px solid #c6a36a;font-size:11px;letter-spacing:2px;margin:20px}
-footer{background:#75405a;color:#fff2f5;text-align:center;padding:45px 15px}
-footer .script{color:#f1cfdd;font-size:48px}
-footer p{font-size:11px;line-height:2}
-
-/* ROSE DECOR */
-.rosette{color:#bd8b99;font-size:24px}
-@media(max-width:500px){
-.heading{font-size:48px}
-.hero-frame h1{font-size:58px}
-.hero-name{font-size:35px}
-.gallery{grid-template-columns:1fr}
-.photo{height:300px}
-.fashion-grid{gap:8px}
-.model-stage{height:260px}
-.model{transform:scale(.88);transform-origin:bottom center}
-.fashion-label h3{font-size:20px}
+.rsvp{
+  background:linear-gradient(135deg,#e9c8d5,#fff7f1,#efd3df);
 }
+
+.rsvp-box{
+  max-width:650px;
+  padding:40px 25px;
+  margin:auto;
+  background:#fff8f1d9;
+  border:1px solid var(--gold);
+}
+
+.rsvp-btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:16px 35px;
+  text-decoration:none;
+  background:#a46b7a;
+  color:white;
+  letter-spacing:3px;
+  font-size:12px;
+}
+
+/* FOOTER */
+footer{
+  padding:60px 20px;
+  text-align:center;
+  background:#8d5d6c;
+  color:#fff6f3;
+}
+
+footer h2{
+  font-family:'Great Vibes',cursive;
+  font-size:65px;
+  font-weight:400;
+}
+
+footer p{
+  font-size:17px;
+  line-height:2;
+}
+
+footer .ornament{letter-spacing:8px;margin:20px}
+
+/* MOBILE */
+@media(max-width:600px){
+  section{padding:65px 17px}
+  .title{font-size:55px}
+  .hero-name{font-size:60px}
+  .hero-age{font-size:18px;letter-spacing:5px}
+  .hero-panel{padding:35px 15px}
+  .portrait-frame{width:260px;height:350px}
+  .program-grid{grid-template-columns:1fr;gap:20px}
+  .attire-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .attire-photo{height:290px}
+  .attire-label h3{font-size:34px}
+  .details{padding:22px}
+  .gallery-card{flex-basis:82%;height:420px}
+  .time-box{min-width:65px;padding:12px}
+  .time-box strong{font-size:26px}
+  .envelope h1{font-size:60px}
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- OPENING -->
-<div id="opening" class="cloud-bg">
-<div class="envelope">
-<div class="flower">🌹</div>
-<p>A SPECIAL CELEBRATION</p>
-<h1 class="script">You're Invited</h1>
-<p>ROSES & TREASURES</p>
-<button class="open-btn" onclick="openSite()">OPEN INVITATION ✦</button>
-</div>
-</div>
-
-<div id="site">
-
-<!-- MAIN INVITATION -->
-<div class="hero cloud-bg">
-<div class="hero-frame">
-<p class="small-title">✦ A BEAUTIFUL MILESTONE ✦</p>
-
-<div class="hero-art">
-<div class="frame"></div>
-<div class="silhouette">
-<div class="hair"></div>
-<div class="head"></div>
-<div class="body"></div>
-<div class="arms"></div>
-<div class="dress"></div>
-</div>
+<!-- OPENING ENVELOPE -->
+<div id="intro">
+  <div class="envelope-wrap">
+    <div class="envelope">
+      <div class="seal">🌷</div>
+      <p>A SPECIAL INVITATION</p>
+      <h1>You're Invited</h1>
+      <p>ROSES & TREASURES</p>
+      <button class="open-btn" onclick="openInvitation()">OPEN THE INVITATION ✧</button>
+    </div>
+    <p class="script" style="font-size:35px;color:white;margin-top:30px">
+      Click to unveil...
+    </p>
+  </div>
 </div>
 
-<h1 class="script">Celebrating</h1>
-<h2 class="hero-name">HER 18TH BIRTHDAY</h2>
-<p class="hero-date">Birthday Girl's Name</p>
-<div class="divider">🌹 ✦ 💎 ✦ 🌹</div>
-<p class="small-title">ROSES & TREASURES</p>
-</div>
-</div>
+<div id="website">
 
-<!-- EVENT DETAILS -->
-<section class="section">
-<div class="inner">
-<p class="small-title">SAVE THE DATE</p>
-<h2 class="script heading">A Night to Remember</h2>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-panel">
 
-<div class="details-box">
-<div class="detail-line">
-<p class="small-title">DATE</p>
-<strong>Month • Day • Year</strong>
-</div>
-<div class="divider">✦</div>
-<div class="detail-line">
-<p class="small-title">TIME</p>
-<strong>Time Here</strong>
-</div>
-<div class="divider">✦</div>
-<div class="detail-line">
-<p class="small-title">VENUE</p>
-<strong>Venue Here</strong>
-<p>Address Here</p>
-</div>
-</div>
-</div>
+    <p class="eyebrow">A celebration of a beautiful milestone</p>
+
+    <div class="portrait-frame">
+      <div class="portrait-inner">
+        <img
+          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=90"
+          alt="Birthday portrait placeholder"
+        >
+      </div>
+    </div>
+
+    <p class="script" style="font-size:55px">Celebrating</p>
+
+    <h1 class="hero-name">Nicole Pancrudo</h1>
+
+    <p class="hero-age">TURNS 18</p>
+
+    <div class="divider">✧ ❀ ✧ ❀ ✧</div>
+
+    <p class="eyebrow">ROSES & TREASURES</p>
+
+    <p class="script" style="font-size:30px;margin-top:20px">
+      A night of elegance and memories
+    </p>
+
+  </div>
 </section>
 
-<!-- BIRTHDAY GIRL -->
-<section class="section cloud-bg">
-<div class="inner">
-<p class="small-title">THE STAR OF THE EVENING</p>
-<h2 class="script heading">A Precious Treasure</h2>
-<p class="description">A beautiful soul, a new chapter, and a night filled with love.</p>
+<!-- COUNTDOWN -->
+<section class="texture">
+  <div class="container">
+    <p class="eyebrow">Until the big day</p>
+    <h2 class="script title">The Countdown</h2>
 
-<div class="gallery">
-<div class="photo"><div class="photo-frame"><span>🌹</span><p>Her Portrait</p></div></div>
-<div class="photo"><div class="photo-frame"><span>💎</span><p>Her Memories</p></div></div>
-<div class="photo"><div class="photo-frame"><span>🌷</span><p>Her Beautiful Moments</p></div></div>
-<div class="photo"><div class="photo-frame"><span>✨</span><p>A New Chapter</p></div></div>
-</div>
-</div>
+    <div class="countdown">
+      <div class="time-box"><strong id="days">00</strong><span>DAYS</span></div>
+      <div class="time-box"><strong id="hours">00</strong><span>HOURS</span></div>
+      <div class="time-box"><strong id="minutes">00</strong><span>MINUTES</span></div>
+      <div class="time-box"><strong id="seconds">00</strong><span>SECONDS</span></div>
+    </div>
+
+    <p class="script" style="font-size:30px">Until we celebrate together ✧</p>
+  </div>
 </section>
 
-<!-- 18 ROSES -->
-<section class="section">
-<div class="inner">
-<p class="small-title">A TRADITION OF LOVE</p>
-<h2 class="script heading">18 Roses</h2>
-<div class="program">
-<div class="rosette">❀</div>
-<h3>18 Roses</h3>
-<p>Eighteen roses, eighteen gentlemen, and a dance to remember.</p>
-<br>
-<p>Participants will be announced soon.</p>
-<div class="rosette">❀</div>
-</div>
-</div>
+<!-- DETAILS -->
+<section class="flower-bg">
+  <div class="container">
+
+    <p class="eyebrow">Save the date</p>
+    <h2 class="script title">You're Invited</h2>
+
+    <p class="text">
+      With hearts full of joy, we invite you to join us
+      in celebrating a special milestone and an unforgettable evening.
+    </p>
+
+    <div class="details">
+
+      <div class="detail">
+        <h3>The Date</h3>
+        <p>MONTH • DAY • YEAR</p>
+      </div>
+
+      <div class="divider">✧</div>
+
+      <div class="detail">
+        <h3>The Time</h3>
+        <p>TIME OF EVENT</p>
+      </div>
+
+      <div class="divider">✧</div>
+
+      <div class="detail">
+        <h3>The Venue</h3>
+        <p>VENUE NAME</p>
+        <p>LOCATION / ADDRESS</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- 18 SHOTS -->
-<section class="section cloud-bg">
-<div class="inner">
-<p class="small-title">WISHES & MEMORIES</p>
-<h2 class="script heading">18 Shots</h2>
-<div class="program">
-<div class="rosette">✦</div>
-<h3>18 Shots</h3>
-<p>Eighteen special people sharing wishes, laughter, and memorable moments with the birthday girl.</p>
-<br>
-<p>Participants will be announced soon.</p>
-<p><small>Celebration drinks may be non-alcoholic.</small></p>
-<div class="rosette">✦</div>
-</div>
-</div>
+<!-- SWIPEABLE PHOTO GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+
+    <p class="eyebrow">A collection of beautiful moments</p>
+    <h2 class="script title">Her Gallery</h2>
+
+    <p class="text">
+      Little moments, lovely memories, and a beautiful journey.
+    </p>
+
+    <p class="gallery-hint">← Swipe to see more →</p>
+
+    <div class="gallery">
+
+      <div class="gallery-card">
+        <div class="gallery-card-inner">
+          <div class="gallery-placeholder">
+            <span>🌸</span>
+            <h3>Beautiful Beginnings</h3>
+            <p>Photo coming soon</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <div class="gallery-card-inner">
+          <div class="gallery-placeholder">
+            <span>🌹</span>
+            <h3>Sweet Memories</h3>
+            <p>Photo coming soon</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <div class="gallery-card-inner">
+          <div class="gallery-placeholder">
+            <span>💗</span>
+            <h3>Lovely Moments</h3>
+            <p>Photo coming soon</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <div class="gallery-card-inner">
+          <div class="gallery-placeholder">
+            <span>✨</span>
+            <h3>Chapter Eighteen</h3>
+            <p>Photo coming soon</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs-bg">
+  <div class="container">
+
+    <p class="eyebrow">A night filled with love</p>
+    <h2 class="script title">The 18th Programs</h2>
+
+    <p class="text">
+      Eighteen beautiful traditions, meaningful wishes,
+      and treasured memories to celebrate her special day.
+    </p>
+
+    <div class="program-grid">
+
+      <div class="program-card">
+        <div class="program-icon">🌹</div>
+        <p class="number">01 — THE DANCE</p>
+        <h3>18 Roses</h3>
+        <p>A special dance shared with eighteen gentlemen.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🥂</div>
+        <p class="number">02 — THE TOAST</p>
+        <h3>18 Shots</h3>
+        <p>Eighteen celebratory toasts and memorable moments.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🕯️</div>
+        <p class="number">03 — THE WISHES</p>
+        <h3>18 Candles</h3>
+        <p>Heartfelt messages, wishes, and words of love.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">💌</div>
+        <p class="number">04 — THE BLESSINGS</p>
+        <h3>18 Bills</h3>
+        <p>Tokens of blessings and wishes for her future.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">💎</div>
+        <p class="number">05 — THE TREASURES</p>
+        <h3>18 Treasures</h3>
+        <p>Special people sharing meaningful gifts and memories.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🌷</div>
+        <p class="number">06 — THE MEMORIES</p>
+        <h3>A Night to Remember</h3>
+        <p>A beautiful evening filled with laughter, love, and treasured moments.</p>
+      </div>
+
+    </div>
+
+    <!-- PARTICIPANTS -->
+    <div class="names-box">
+      <h4>Our Special Participants</h4>
+      <p>
+        Names and participants for each program
+        will be revealed soon.
+      </p>
+    </div>
+
+  </div>
 </section>
 
 <!-- ATTIRE -->
-<section class="section">
-<div class="inner">
-<p class="small-title">DRESS IN YOUR COLORS</p>
-<h2 class="script heading">The Attire</h2>
-<p class="description">Kindly wear the colors assigned for the evening.</p>
+<section class="attire">
+  <div class="container">
 
-<div class="fashion-grid">
+    <p class="eyebrow">Dress for the occasion</p>
+    <h2 class="script title">The Dress Code</h2>
 
-<!-- GIRLS PINK -->
-<div class="fashion-card">
-<div class="model-stage pink-bg">
-<div class="model girl">
-<div class="hair"></div><div class="head"></div><div class="neck"></div>
-<div class="arms"></div><div class="top"></div><div class="skirt pink-dress"></div>
-</div>
-</div>
-<div class="fashion-label">
-<h3>Pink</h3><p>LADIES</p>
-</div>
-</div>
+    <p class="text">
+      A dreamy palette of pink and purple for the ladies,
+      and white and pink for the gentlemen.
+    </p>
 
-<!-- GIRLS PURPLE -->
-<div class="fashion-card">
-<div class="model-stage purple-bg">
-<div class="model girl">
-<div class="hair"></div><div class="head"></div><div class="neck"></div>
-<div class="arms"></div><div class="top"></div><div class="skirt purple-dress"></div>
-</div>
-</div>
-<div class="fashion-label">
-<h3>Purple</h3><p>LADIES</p>
-</div>
-</div>
+    <div class="attire-grid">
 
-<!-- BOYS WHITE -->
-<div class="fashion-card">
-<div class="model-stage white-bg">
-<div class="model boy">
-<div class="hair"></div><div class="head"></div><div class="neck"></div>
-<div class="arms"></div><div class="shirt white-shirt"></div><div class="pants"></div>
-</div>
-</div>
-<div class="fashion-label">
-<h3>White</h3><p>GENTLEMEN</p>
-</div>
-</div>
+      <!-- GIRLS PINK -->
+      <div class="attire-card">
+        <div class="attire-photo">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=90"
+               alt="Pink formal fashion inspiration">
+        </div>
+        <div class="attire-label">
+          <h3>Pink</h3>
+          <p>LADIES</p>
+        </div>
+      </div>
 
-<!-- BOYS PINK -->
-<div class="fashion-card">
-<div class="model-stage boy-pink-bg">
-<div class="model boy">
-<div class="hair"></div><div class="head"></div><div class="neck"></div>
-<div class="arms"></div><div class="shirt pink-shirt"></div><div class="pants"></div>
-</div>
-</div>
-<div class="fashion-label">
-<h3>Pink</h3><p>GENTLEMEN</p>
-</div>
-</div>
+      <!-- GIRLS PURPLE -->
+      <div class="attire-card">
+        <div class="attire-photo">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=90"
+               alt="Purple fashion inspiration">
+        </div>
+        <div class="attire-label">
+          <h3>Purple</h3>
+          <p>LADIES</p>
+        </div>
+      </div>
 
-</div>
-</div>
+      <!-- BOYS WHITE -->
+      <div class="attire-card">
+        <div class="attire-photo">
+          <img src="https://images.unsplash.com/photo-16171273689415-8e3f2f7b6a1b?auto=format&fit=crop&w=800&q=90"
+               alt="White formal outfit inspiration">
+        </div>
+        <div class="attire-label">
+          <h3>White</h3>
+          <p>GENTLEMEN</p>
+        </div>
+      </div>
+
+      <!-- BOYS PINK -->
+      <div class="attire-card">
+        <div class="attire-photo">
+          <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=800&q=90"
+               alt="Pink formal outfit inspiration">
+        </div>
+        <div class="attire-label">
+          <h3>Pink</h3>
+          <p>GENTLEMEN</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider">✧ ❀ ✧</div>
+    <p class="script" style="font-size:35px">
+      Dress beautifully, celebrate joyfully.
+    </p>
+
+  </div>
 </section>
 
 <!-- RSVP -->
-<section class="section cloud-bg">
-<div class="inner">
-<p class="small-title">YOUR PRESENCE IS OUR PRESENT</p>
-<h2 class="script heading">Join the Celebration</h2>
-<p class="description">Your presence will make this special day even more beautiful and memorable.</p>
-<a class="rsvp-btn" href="#" onclick="alert('Please contact the celebrant or organizer to confirm your attendance!')">KINDLY RSVP ✦</a>
-</div>
+<section class="rsvp">
+  <div class="rsvp-box">
+
+    <p class="eyebrow">Your presence is our present</p>
+    <h2 class="script title">Join the Celebration</h2>
+
+    <p class="text">
+      It would mean so much to have you with us
+      as we celebrate this beautiful milestone.
+    </p>
+
+    <!-- REPLACE THE LINK WITH YOUR RSVP LINK -->
+    <a href="#" class="rsvp-btn" onclick="alert('Please contact the organizer to confirm your attendance!')">
+      KINDLY RSVP ✧
+    </a>
+
+    <div class="divider">🌹 ✧ 💎 ✧ 🌹</div>
+
+    <p class="script" style="font-size:35px">
+      We hope to see you there!
+    </p>
+
+  </div>
 </section>
 
+<!-- ENDING -->
 <footer>
-<p>🌹 ✦ 💎 ✦ 🌹</p>
-<h2 class="script">Roses & Treasures</h2>
-<p>A night of elegance, love, and treasured memories.</p>
-<p>We hope to celebrate with you!</p>
+  <div class="ornament">🌹 ✧ 💎 ✧ 🌹</div>
+  <h2>Roses & Treasures</h2>
+  <p>Julianne Charmel • Turns 18</p>
+  <p>A night of love, elegance, and unforgettable memories.</p>
+  <div class="ornament">✧ ❀ ✧</div>
 </footer>
 
 </div>
 
 <script>
-function openSite(){
-document.getElementById("opening").style.display="none";
-document.getElementById("site").style.display="block";
-window.scrollTo(0,0);
+
+/* OPEN INVITATION */
+function openInvitation(){
+  document.getElementById("intro").style.display="none";
+  document.getElementById("website").style.display="block";
+  window.scrollTo({top:0,behavior:"smooth"});
 }
+
+/* COUNTDOWN */
+/* CHANGE THIS DATE TO THE ACTUAL EVENT DATE */
+const eventDate = new Date("2027-01-01T17:00:00").getTime();
+
+function updateCountdown(){
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  if(distance <= 0){
+    document.getElementById("days").innerText="00";
+    document.getElementById("hours").innerText="00";
+    document.getElementById("minutes").innerText="00";
+    document.getElementById("seconds").innerText="00";
+    return;
+  }
+
+  const days = Math.floor(distance/(1000*60*60*24));
+  const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+  const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+  const seconds = Math.floor((distance%(1000*60))/1000);
+
+  document.getElementById("days").innerText=days;
+  document.getElementById("hours").innerText=hours;
+  document.getElementById("minutes").innerText=minutes;
+  document.getElementById("seconds").innerText=seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
 </script>
 
 </body>
